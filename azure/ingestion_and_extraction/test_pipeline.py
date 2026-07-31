@@ -1,3 +1,8 @@
+# test_pipeline.py
+# Purpose: Run extractor + embedder pipeline and SAVE output for search ingestion
+
+import os
+import json
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 
@@ -31,7 +36,15 @@ result = process_document("../data/Policy_doc.pdf", client)
 print("Source:", result["source"])
 print("Total Chunks:", len(result["chunks"]))
 print("Total Embeddings:", len(result["embeddings"]))
-print("Entities Extracted:", result["entities"])
+print("Entities Extracted:", len(result["entities"]))
 
 print("\nFirst embedding vector length:", len(result["embeddings"][0]))
 print("First 5 values:", result["embeddings"][0][:5])
+
+# -----------------------------------------
+# 5. SAVE RESULT TO JSON FILE
+# -----------------------------------------
+with open("ingestion_output.json", "w") as f:
+    json.dump(result, f, indent=2)
+
+print("\nSaved ingestion_output.json successfully.")

@@ -77,6 +77,18 @@ typing_extensions = {version = ">=4.5", markers = "python_version < \"3.13\""}
 trio = ["trio (>=0.32.0)"]
 
 [[package]]
+name = "azure-common"
+version = "1.1.28"
+description = "Microsoft Azure Client Library for Python (Common)"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "azure-common-1.1.28.zip", hash = "sha256:4ac0cd3214e36b6a1b6a442686722a5d8cc449603aa833f3f0f40bda836704a3"},
+    {file = "azure_common-1.1.28-py2.py3-none-any.whl", hash = "sha256:5c12d3dcf4ec20599ca6b0d3e09e86e146353d443e7fcc050c9a19c1f9df20ad"},
+]
+
+[[package]]
 name = "azure-core"
 version = "1.41.0"
 description = "Microsoft Azure Core Library for Python"
@@ -130,6 +142,24 @@ files = [
 [package.dependencies]
 azure-core = ">=1.31.0"
 isodate = ">=0.6.1"
+typing-extensions = ">=4.6.0"
+
+[[package]]
+name = "azure-search-documents"
+version = "11.5.0"
+description = "Microsoft Azure Cognitive Search Client Library for Python"
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+files = [
+    {file = "azure_search_documents-11.5.0-py3-none-any.whl", hash = "sha256:e973df13fc46c1c1bfa3760d74b45ca6ef928816e0f8c7df0c68171a428365ac"},
+    {file = "azure_search_documents-11.5.0.tar.gz", hash = "sha256:13883d12c833b66546c188cce847de6fa67b83545cb21163d8956ac031e53cf8"},
+]
+
+[package.dependencies]
+azure-common = ">=1.1"
+azure-core = ">=1.28.0"
+isodate = ">=0.6.0"
 typing-extensions = ">=4.6.0"
 
 [[package]]
@@ -2576,4 +2606,4 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "fbc3a97767ce4e9ed9806ef0f2db9a9d5a2fc837f07734a09926137a8913c441"
+content-hash = "8b35932b00547745e08db0c97356a560acfe1a350f703835c6b154f312f43d7d"
